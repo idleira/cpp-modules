@@ -8,26 +8,13 @@ int main(void)
 	std::cout << "please enter: ADD, SEARCH, or EXIT." << std::endl;
 
 	std::string input = "";
+	PhoneBook phoneBook;
 	while (input.compare("EXIT") != 0)
 	{
 		std::cin >> input;
-		if (input.compare("ADD") == 0)
-		{
-			PhoneBook phoneBook;
-			phoneBook.addContact();
-		}
-		else if (input.compare("SEARCH") == 0)
-		{
-			PhoneBook phoneBook;
-			phoneBook.searchContact();
-		}
-		else if (input.compare("EXIT") == 0)
-		{
-			std::cout << "goodbye! ꒰ᐢ. .ᐢ꒱" << std::endl;
-		}
-		else
-		{
-			std::cout << "please enter: ADD, SEARCH, or EXIT." << std::endl;
-		}
+		if (input.compare("ADD") == 0) { phoneBook.addContact(); }
+		else if (input.compare("SEARCH") == 0) {  phoneBook.searchContact(); }
+		else if (input.compare("EXIT") == 0) { std::cout << "goodbye! ꒰ᐢ. .ᐢ꒱" << std::endl; }
+		else { std::cout << "please enter: ADD, SEARCH, or EXIT." << std::endl; }
 	}
 }
