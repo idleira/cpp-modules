@@ -13,7 +13,7 @@ class Contact
 		std::string nickname;
 		std::string phoneNumber;
 		std::string darkestSecret;
-		
+
 	public:
 		Contact(void);
 
@@ -23,11 +23,11 @@ class Contact
 		std::string getPhoneNumber(void);
 		std::string getDarkestSecret(void);
 
-		void setFirstName(std::string firstName);
-		void setLastName(std::string lastName);
-		void setNickname(std::string nickname);
-		void setPhoneNumber(std::string phoneNumber);
-		void setDarkestSecret(std::string darkestSecret);
+		void setFirstName(std::string new_firstName);
+		void setLastName(std::string new_lastName);
+		void setNickname(std::string new_nickname);
+		void setPhoneNumber(std::string new_phoneNumber);
+		void setDarkestSecret(std::string new_darkestSecret);
 
 };
 
