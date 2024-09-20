@@ -1,32 +1,25 @@
 #include "PhoneBook.hpp"
 
-PhoneBook::PhoneBook(void) { contactIndex = 0; }
+PhoneBook::PhoneBook(void) { contactIndex = 0; contactCount = 0;}
 
 void PhoneBook::addContact(void)
 {
 	Contact newContact;
-	std::string input;
 
 	std::cout << "time to make a new contact! 📚📞" << std::endl;
 	std::cout << "just fill in the details below to get started:\n" << std::endl;
 
-	std::cout << "first name:\n";
-	std::cin >> input;
-	newContact.setFirstName(input);
-	std::cout << "last name:\n";
-	std::cin >> input;
-	newContact.setLastName(input);
-	std::cout << "nickname:\n";
-	std::cin >> input;
-	newContact.setNickname(input);
-	std::cout << "phone number:\n";
-	std::cin >> input;
-	newContact.setPhoneNumber(input);
-	std::cout << "darkest secret:\n";
-	std::cin >> input;
-	newContact.setDarkestSecret(input);
+	newContact.setFirstName(getInput("first name: "));
+	newContact.setLastName(getInput("last name: "));
+	newContact.setNickname(getInput("nickname:"));
+	newContact.setPhoneNumber(getInput("phone number: "));
+	newContact.setDarkestSecret(getInput("darkest secret: "));
 
-	contacts[contactIndex %8] = newContact;
+	contacts[contactIndex] = newContact;
+	if (contactIndex < 7)
+		contactIndex++;
+	else
+		contactIndex = 0;
 	contactIndex++;
 
 	std::cout << "contact added! 👤✅\n " << std::endl;
