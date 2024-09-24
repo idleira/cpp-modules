@@ -6,12 +6,12 @@ void PhoneBook::addContact(void)
 {
 	Contact newContact;
 
-	std::cout << "time to make a new contact! 📚📞" << std::endl;
+	std::cout << "\ntime to make a new contact! 📚📞" << std::endl;
 	std::cout << "just fill in the details below to get started:\n" << std::endl;
 
 	newContact.setFirstName(getInput("first name: "));
 	newContact.setLastName(getInput("last name: "));
-	newContact.setNickname(getInput("nickname:"));
+	newContact.setNickname(getInput("nickname: "));
 	newContact.setPhoneNumber(getInput("phone number: "));
 	newContact.setDarkestSecret(getInput("darkest secret: "));
 
@@ -22,7 +22,7 @@ void PhoneBook::addContact(void)
 		contactIndex = 0;
 	contactIndex++;
 
-	std::cout << "contact added! 👤✅\n " << std::endl;
+	std::cout << "\ncontact added! 👤✅ " << std::endl;
 }
 
 void PhoneBook::searchContact(void)
@@ -30,20 +30,20 @@ void PhoneBook::searchContact(void)
 	std::string input;
 	int	index = 0;
 
-	if (!index)
+	if (!contactIndex)
 	{
-		std::cout << "ADD a contact before SEARCHing" << std::endl;
+		std::cout << "\nADD a contact before SEARCHing" << std::endl;
 		return ;
 	}
 	// printPhoneBook();
-	std::cout << "searching for a contact! 🔍📞" << std::endl;
-	std::cout << "please enter the index of the contact you would like to view:\n" << std::endl;
+	std::cout << "\nsearching for a contact! 🔍📞" << std::endl;
+	std::cout << "enter the index of the contact you would like to view:\n" << std::endl;
 	std::cin >> input;
-	index = std::stoi(input);
+	index = std::atoi(input.c_str());
 
 	if (index >= 0 && index < contactIndex)
 	{
-		std::cout << "first name: " << contacts[index].getFirstName() << std::endl;
+		std::cout << "\nfirst name: " << contacts[index].getFirstName() << std::endl;
 		std::cout << "last name: " << contacts[index].getLastName() << std::endl;
 		std::cout << "nickname: " << contacts[index].getNickname() << std::endl;
 		std::cout << "phone number: " << contacts[index].getPhoneNumber() << std::endl;
