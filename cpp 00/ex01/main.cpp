@@ -6,25 +6,27 @@ int main(void)
 {
 	std::cout << "welcome to your phonebook! ꒰ᐢ. .ᐢ꒱\n" << std::endl;
 	std::cout << "empty phonebook created.\n" << std::endl;
-	std::cout << "please enter: ADD, SEARCH, or EXIT." << std::endl;
+	std::cout << "\nplease enter: ADD, SEARCH, or EXIT." << std::endl;
 
 	std::string input = "";
 	PhoneBook phoneBook;
-	while (input.compare("EXIT") || input.compare("exit"))
+	while (1)
 	{
-		std::cout << "→" << std::flush;
+		std::cout << "\n→	" << std::flush;
 		if (!std::getline(std::cin, input))
 			break ;
 		if (input.empty())
 			continue;
-		if (!input.compare("ADD") ||input.compare("add"))
+		if (!input.compare("ADD") || !input.compare("add"))
 			phoneBook.addContact();
-		else if (input.compare("SEARCH")|| input.compare("search")) 
+		else if (!input.compare("SEARCH")|| !input.compare("search")) 
 				phoneBook.searchContact();
-		else if (input.compare("EXIT") || input.compare("exit"))
-			std::cout << "invalid input. please enter: ADD, SEARCH, or EXIT." << std::endl;
+		else if (!input.compare("EXIT") || !input.compare("exit"))
+			break ;
+		else
+			std::cout << "\ninvalid input. please enter: ADD, SEARCH, or EXIT." << std::endl;
 	}
-	std::cout << "goodbye! ꒰ᐢ. .ᐢ꒱" << std::endl;
+	std::cout << "\ngoodbye! ꒰ᐢ. .ᐢ꒱" << std::endl;
 	return (0);
 }
 
@@ -45,7 +47,7 @@ std::string getInput(const std::string& fieldName)
 	std::string input = "";
 	while (isEmpty(input))
 	{
-		std::cout << fieldName << ":" << std::flush;
+		std::cout << fieldName << std::flush;
 		std::getline(std::cin, input);
 	}
 	return (input);
