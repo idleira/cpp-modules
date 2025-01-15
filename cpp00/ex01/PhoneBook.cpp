@@ -31,7 +31,7 @@ void	PhoneBook::incrementIndex(void) {
 
 void	PhoneBook::printContactList(void) const {
 	std::cout	<< "✢----------✢----------✢----------✢----------✢" << std::endl
-				<< "|   \033[1mindex\033[0m  |\033[1mfirst name\033[0m|\033[1mlast  name\033[0m| \033[1mnickname\033[0m |" << std::endl
+				<< "|   \033[1mINDEX\033[0m  |\033[1mFIRST NAME\033[0m|\033[1mLAST  NAME\033[0m| \033[1mNICKNAME\033[0m |" << std::endl
 				<< "✢----------✢----------✢----------✢----------✢" << std::endl;
 	for (int i = 0; i < 8; i++) {
 		printContactToList(i);
@@ -98,8 +98,8 @@ bool 	PhoneBook::addContact(void) {
 	std::string	input;
 
 	incrementIndex();
-	std::cout << std::endl << "\ntime to make a new contact! 📚📞" << std::endl << std::endl;
-	std::cout << "just fill in the details below to get started:\n" << std::endl;
+	std::cout << std::endl << "time to make a new contact! 📚📞" << std::endl << std::endl;
+	std::cout << "just fill in the details below to get started:\n\n" << std::endl;
 	while (!_abort) {
 		input = getNewInput("\033[1mfirst name\033[0m:");
 		if (_abort || this->contactList[currentContactIndex].setFirstName(input))

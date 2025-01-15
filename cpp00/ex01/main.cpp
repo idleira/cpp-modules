@@ -26,18 +26,18 @@ int	main(void) {
 		std::cout << "\nenter: ADD, SEARCH, or EXIT.\n" << std::endl;
 		std::cout << "\n\033[1;33m→\033[0m	" << std::flush;
 		userInput = getUserInput(&book);
-		if (userInput == "EXIT" || userInput == "exit")
+		if (userInput == "EXIT")
 			break ;
-		else if (userInput == "ADD" || userInput == "add") {
+		else if (userInput == "ADD") {
 			if (!book.addContact())
 				break ;
 		}			
-		else if (userInput == "SEARCH" || userInput == "search") {
+		else if (userInput == "SEARCH") {
 			if (!book.searchContact())
 				break ;
 		}
 		else {
-			std::cout	<< "\n\033[1;31minvalid input\033[0m.please try:\n" << std::endl
+			std::cout	<< "\n\033[1;31minvalid input\033[0m\n" << std::endl
 						<< "\t- ADD     to add a new contact" << std::endl
 						<< "\t- SEARCH  to search the contact list" << std::endl
 						<< "\t- EXIT    to exit the phonebook" << std::endl;
